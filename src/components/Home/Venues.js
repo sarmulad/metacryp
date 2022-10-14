@@ -69,9 +69,15 @@ const Title = styled.h1`
 const Text = styled.p`
     font-style: normal;
     font-weight: 400;
-    font-size: 25px;
+    font-size: 15px;
     line-height: 40px;
     color:${Colors.White};
+
+    @media ${Devices.Tablet} {
+      font-size: 25px;
+
+    }
+
 `;
 
 const Icon = styled.img`

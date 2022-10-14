@@ -15,7 +15,6 @@ const GlobalStyle = createGlobalStyle`
   html,
   body {
     background-color: ${Colors.Background};
-    font-family: "Poppins", sans-serif;
     font-family: 'Clash Display', sans-serif;
 
   }
