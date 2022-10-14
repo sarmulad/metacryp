@@ -63,9 +63,14 @@ const Title = styled.h1`
 const Text = styled.p`
     font-style: normal;
     font-weight: 400;
-    font-size: 25px;
+    font-size: 15px;
     line-height: 40px;
     color:${Colors.Purple};
+
+    @media ${Devices.Tablet} {
+      font-size: 25px;
+      line-height: 64px;
+    }
 `;
 
 const Icon = styled.img`
@@ -118,6 +123,7 @@ const H6 = styled.h6`
 `
 
 const TableContainer = styled.div`
+   border: 1px solid #FDFDFD;
     border-radius: 30px;
     padding: 3rem 2rem;
     display flex;
@@ -127,7 +133,6 @@ const TableContainer = styled.div`
     @media ${Devices.Tablet} {
         padding: 4rem 3rem;
         max-width:600px;
-        border: 1px solid #FDFDFD;
       }
 
 `

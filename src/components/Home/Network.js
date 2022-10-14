@@ -53,8 +53,13 @@ const Title = styled.h1`
 const Text = styled.p`
     font-style: normal;
     font-weight: 400;
-    font-size: 25px;
+    font-size: 15px;
     line-height: 40px;
+
+    @media ${Devices.Tablet} {
+      font-size: 25px;
+      line-height: 64px;
+    }
 `;
 const BtnContainer = styled.div`
   display: flex;
