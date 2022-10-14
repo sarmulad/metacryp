@@ -63,8 +63,8 @@ const Title = styled.h1`
 const Text = styled.p`
     font-style: normal;
     font-weight: 400;
-    font-size: 15px;
-    line-height: 40px;
+    font-size: 16px;
+    line-height: 32px;
     color:${Colors.Purple};
 
     @media ${Devices.Tablet} {
@@ -139,7 +139,7 @@ const TableContainer = styled.div`
 const Table = styled.table`
     font-style: normal;
     font-weight: 700;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 32px;
     border-collapse: collapse;
     height: 100%;

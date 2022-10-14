@@ -108,7 +108,7 @@ function MyApp({ Component, pageProps }) {
           content="Cleaned create-next-app including styled-components and configured theme"
         />
         <link rel="icon" href="/favicon.png" />
-        <link href="http://fonts.cdnfonts.com/css/clash-display" rel="stylesheet"/>
+        {/* <link href="http://fonts.cdnfonts.com/css/clash-display" rel="stylesheet"/> */}
       </Head>
       <GlobalStyle />
       <Main>
