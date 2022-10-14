@@ -58,7 +58,7 @@ const Text = styled.p`
 
     @media ${Devices.Tablet} {
       font-size: 25px;
-      line-height: 64px;
+      line-height: 40px;
     }
 `;
 const BtnContainer = styled.div`
