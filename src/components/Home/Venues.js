@@ -33,7 +33,7 @@ const SectionContainer = styled.div`
   margin-top: 150px;
   margin-bottom: 100px;
   gap: 2rem;
-  flex-direction: column;
+  flex-direction: column-reverse;
   @media ${Devices.Laptop} {
     flex-direction: row;
   }
@@ -56,9 +56,15 @@ const Title = styled.h1`
   font-family: 'Clash Display';
   font-style: normal;
   font-weight: 700;
-  font-size: 40px;
+  font-size: 30px;
   color:${Colors.White};
-  line-height: 64px;
+  line-height: 50px;
+
+  @media ${Devices.Tablet} {
+    font-size: 40px;
+    line-height: 64px;
+  }
+
 `;
 const Text = styled.p`
     font-style: normal;
@@ -72,7 +78,9 @@ const Icon = styled.img`
     width:32px;
     height:32px;
 `;
-const Illustration = styled.img``;
+const Illustration = styled.img`
+    width:100%;
+`;
 
 const Container = styled.div`
     border-top: 2px solid #fff;

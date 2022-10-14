@@ -103,7 +103,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
      <Head>
-        <title>Metecrypt</title>
+        <title>Metacrypt</title>
         <meta
           name="description"
           content="Cleaned create-next-app including styled-components and configured theme"
@@ -118,18 +118,21 @@ function MyApp({ Component, pageProps }) {
           <MobileMenu open={MobileMenuIsOpen}>
             <ul>
               <li>
-                <NavItem href="#">Marketplace</NavItem>
+                <NavItem href="#">Home</NavItem>
               </li>
               <li>
-                <NavItem href="#">Drops</NavItem>
+                <NavItem href="/about">About Us</NavItem>
               </li>
               <li>
-                <NavItem href="#">Brands</NavItem>
+                <NavItem href="/governance">Government & Rewards</NavItem>
+              </li>
+              <li>
+                <NavItem href="#">Whitepaper</NavItem>
               </li>
               <li>
                 <Button>Create</Button>
               </li>
-              <hr color={Colors.Primary} size="1" />
+              <hr color={Colors.White} size="1" />
               <li>
                 <NavItem href="#">Sign In</NavItem>
               </li>

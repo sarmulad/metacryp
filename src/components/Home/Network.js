@@ -20,7 +20,7 @@ const SectionContainer = styled.div`
   margin-bottom: 100px;
   gap: 2rem;
   z-index:2;
-  flex-direction: column;
+  flex-direction: column-reverse;
   @media ${Devices.Laptop} {
     flex-direction: row;
   }
@@ -42,8 +42,13 @@ const Title = styled.h1`
   font-family: 'Clash Display';
   font-style: normal;
   font-weight: 700;
-  font-size: 47px;
-  line-height: 64px;
+  font-size: 30px;
+  line-height: 40px;
+
+  @media ${Devices.Tablet} {
+    font-size: 47px;
+    line-height: 64px;
+  }
 `;
 const Text = styled.p`
     font-style: normal;
@@ -54,7 +59,7 @@ const Text = styled.p`
 const BtnContainer = styled.div`
   display: flex;
   gap: 2rem;
-  flex-direction: column;
+  flex-direction: row;
   @media ${Devices.Laptop} {
     flex-direction: row;
   }
@@ -65,7 +70,7 @@ const Icon = styled.img`
 `;
 
 const Illustration = styled.img`
-
+ width:100%;
 `;
 
 export default function Network() {

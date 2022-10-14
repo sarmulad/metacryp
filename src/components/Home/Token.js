@@ -7,7 +7,7 @@ const TokenEl = styled.article`
   background: url("images/background.svg");
   background-size:cover;
   color: ${Colors.Black};
-  padding: 1rem;
+  padding: 3rem 1rem;
   display: flex;
   flex-direction: column;
 
@@ -17,12 +17,13 @@ const TokenEl = styled.article`
 `;
 const SectionContainer = styled.div`
   display: flex;
-  margin-top: 150px;
   margin-bottom: 100px;
-  gap: 2rem;
+  gap: 1rem;
   flex-direction: column;
   @media ${Devices.Laptop} {
     flex-direction: row;
+    gap: 2rem;
+    margin-top: 150px;
   }
 `;
 
@@ -34,8 +35,11 @@ const LeftSection = styled.div`
 `;
 
 const RightSection = styled.div`
-  margin-left:2rem;
-  margin-top:2rem;
+  margin-top:1rem;
+  @media ${Devices.Tablet} {
+    margin-left:2rem;
+    margin-top:2rem;
+  }
 
 `;
 
@@ -45,13 +49,15 @@ const Title = styled.h1`
   font-weight: 700;
   font-size: 30px;
   color:${Colors.White};
-  line-height: 64px;
+  line-height: 50px;
   text-align: center;
   margin-bottom: 2rem;
 
   @media ${Devices.Laptop} {
     font-size: 47px;
     margin-bottom: 3rem;
+    line-height: 64px;
+
   }
 `;
 const Text = styled.p`
@@ -112,17 +118,16 @@ const H6 = styled.h6`
 `
 
 const TableContainer = styled.div`
-    border: 1px solid #FDFDFD;
     border-radius: 30px;
     padding: 3rem 2rem;
     display flex;
     align-items:center;
     justify-content:center;
-    max-width:600px;
     margin: 0 auto;
-    @media ${Devices.Laptop} {
+    @media ${Devices.Tablet} {
         padding: 4rem 3rem;
-
+        max-width:600px;
+        border: 1px solid #FDFDFD;
       }
 
 `
@@ -137,19 +142,27 @@ const Table = styled.table`
 `
 const Td = styled.td`
     text-align: left;
-    padding: 20px;
+    padding: 15px;
     color: #161452;
     font-size: 14px;
     font-weight: 400;
     line-height: 16px;
+    @media ${Devices.Tablet} {
+      padding: 20px;
+    }
 `
 const Th = styled.th`
     text-align: left;
-    padding: 20px;
+    padding: 16px;
     color: #161452;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 16px;
+  @media ${Devices.Tablet} {
+    font-size: 14px;
+    padding: 20px;
+  }
+  
 `
 const Tr = styled.tr`
     border:0.6px solid #200A34;

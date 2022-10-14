@@ -52,7 +52,7 @@ export default function Footer() {
   return (
     <FooterEl>
       <Container>
-      <Image src="/images/logo.svg" alt=""/>
+      <Image src="/images/logo.svg" alt="" width='100%' height="100%"/>
       <Socials>
         <a hef="#">
           <BsInstagram />

@@ -13,11 +13,11 @@ const FeaturesEl = styled.article`
   align-items: center;
   background: linear-gradient(180deg, #3757FF -18.57%, #22FFD7 100%);
   backdrop-filter: blur(200px);
-  padding: 6rem 4rem 5rem 4rem;
+  padding: 1rem;
   z-index:2;
-
+  
   @media ${Devices.Laptop} {
-    height:100vh
+   padding: 6rem 4rem 5rem 4rem;
   }
 
 //   @media ${Devices.LaptopL} {
@@ -32,18 +32,27 @@ const InnerCircle = styled.div`
   z-index:2;
   justify-content:center;
   border-radius: 50%;
-  width: 464px;
-  height: 464px;
+  width: 300px;
+  height: 300px;
   background: linear-gradient(145.6deg, #CF1395 -12.91%, rgba(110, 11, 102, 0.977546) 50.81%, rgba(34, 4, 66, 0.96) 100.61%);
 
+  @media ${Devices.Laptop} {
+    width: 464px;
+    height: 464px;
+  }
 `;
 
 const Title = styled.h1`
     font-weight: 700;
-    font-size: 211.556px;
+    font-size: 30px;
     line-height: 119px;
     text-align: center;
     color: #FFFFFF;
+   
+    @media ${Devices.Tablet} {
+      font-size: 211.556px;
+    }
+
 `;
 
 const ExploreEl = styled.article`
@@ -53,9 +62,10 @@ const ExploreEl = styled.article`
   align-items: center;
   background: linear-gradient(180deg, #3757FF -18.57%, #22FFD7 100%);
   backdrop-filter: blur(200px);
-  padding: 6rem 4rem 5rem 4rem;
+  padding: 3rem 1rem;
   @media ${Devices.Laptop} {
-    height:100vh
+    height:100vh;
+    padding: 6rem 4rem 5rem 4rem;
   }
 `;
 
@@ -67,6 +77,12 @@ const ElementContainer = styled.div`
     background: url(/images/frost.svg);
     background-size:cover;
     border-radius: 39px;
+
+    @media ${Devices.Tablet} {
+      gap:2rem;
+      padding:2rem;
+    }
+
 `;
 
 const Element = styled.div`
@@ -102,12 +118,17 @@ const Icon = styled.img`
 const AnimateText = styled.h1`
     font-style: normal;
     font-weight: 700;
-    font-size: 157px;
-    line-height: 180px;
+    font-size: 30px;
+    line-height: 40px;
     letter-spacing: 0.02em;
     color: transparent;
     -webkit-text-stroke: 2px #3757FF;
-
+     margin-top:2rem;
+   
+    @media ${Devices.Laptop} {
+      font-size: 157px;
+      line-height: 180px;
+    }
 `
 export default function Features() {
   return (
