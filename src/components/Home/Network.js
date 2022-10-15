@@ -4,7 +4,7 @@ import { Colors, Devices } from "../Theme";
 
 
 const NetworkEl = styled.article`
-  background: ${Colors.GradientsRed};
+  // background: ${Colors.GradientsRed};
   color: ${Colors.Black};
   padding: 1rem;
   display: flex;
@@ -16,7 +16,7 @@ const NetworkEl = styled.article`
 `;
 const SectionContainer = styled.div`
   display: flex;
-  margin-top: 150px;
+  // margin-top: -150px;
   margin-bottom: 100px;
   gap: 2rem;
   z-index:2;
@@ -44,7 +44,7 @@ const Title = styled.h1`
   font-weight: 700;
   font-size: 30px;
   line-height: 40px;
-
+   text-align:start;
   @media ${Devices.Tablet} {
     font-size: 47px;
     line-height: 64px;
@@ -55,6 +55,7 @@ const Text = styled.p`
     font-weight: 400;
     font-size: 16px;
     line-height: 32px;
+    text-align:start;
 
     @media ${Devices.Tablet} {
       font-size: 25px;

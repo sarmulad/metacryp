@@ -16,8 +16,9 @@ const GlobalStyle = createGlobalStyle`
   body {
     background-color: ${Colors.Background};
     font-family: 'Clash Display', sans-serif;
-
+    
   }
+  
 
   p,a,h1,h2,h3,h5,h6,div,span{
     /* color:${Colors.White}; */

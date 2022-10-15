@@ -29,7 +29,7 @@ export default function Home() {
         <link href="http://fonts.cdnfonts.com/css/clash-display" rel="stylesheet"/>
       </Head> */}
       <Hero />
-      <Network/>
+      {/* <Network/> */}
       <Features/>
       <Venues/>
       <Token/>

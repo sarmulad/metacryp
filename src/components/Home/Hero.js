@@ -3,6 +3,7 @@ import { Colors, Devices } from "../Theme";
 import { useRef, useEffect } from "react";
 import { gsap, timeline } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import Network from "./Network";
 
 
 gsap.registerPlugin(ScrollTrigger)
@@ -13,14 +14,16 @@ const HeroEl = styled.article`
   z-index: 12;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  overflow:hidden;
+
 
   @media ${Devices.Laptop} {
     // margin: 3rem 4rem 5rem 4rem;
     // margin-top: -100px;
     // padding:2rem;
     height: auto;
-
+    overflow:hidden;
   }
 
   // @media ${Devices.LaptopL} {
@@ -28,7 +31,7 @@ const HeroEl = styled.article`
   // }
 `;
 const CircleContainer = styled.div`
- 
+  z-index:0;
   @media ${Devices.Laptop} {
     width: 1016px;
     height: 1016px;
@@ -85,21 +88,25 @@ const InnerCircle = styled.div`
   top: 50%;
   left: 50%;
   margin: -100px  -100px;
-
+ 
   @media ${Devices.Laptop} {
     width: 464px;
     height: 464px;
-    margin: -232px  -232px;
+    margin: -232px;
 
    }
 `;
 
 const Logo = styled.img`
    width: 150px;
-  padding-right: 1rem;
-
+  //  padding-right: 1rem;
+   position: absolute;
+   top: 45%;
+   left: 35%;
   @media ${Devices.Laptop} {
     width: 300px;
+    // margin: -200px;
+
    }
   
 `;
@@ -110,33 +117,61 @@ export default function Hero() {
   const logoRef = useRef();
   const FirstCircleRef = useRef();
 
-  // useEffect(() => {
+  useEffect(() => {
   
-  //   let ctx = gsap.context(() => {
-    
-  //     let tl = gsap.timeline({
-  //       scrollTrigger: {
-  //         trigger: circleRef.current,
-  //         start: "top center",
-  //         end: "+=100%",
-  //         scrub: true,
-  //         pin: true
-  //       },
-  //     })
+    let ctx = gsap.context(() => {
+
+      let first = gsap.timeline({
+        scrollTrigger: {
+          trigger: FirstCircleRef.current,
+          start: "center center",
+          end: "+=100%",
+          scrub: true,
+          // pin: true
+        },
+      })
+
+      let tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: circleRef.current,
+          start: "center center",
+          end: "+=100%",
+          scrub: true,
+          // pin: true
+        },
+      })
+      let logo = gsap.timeline({
+        scrollTrigger: {
+          trigger: logoRef.current,
+          start: "top center",
+          end: "+=100%",
+          scrub: true,
+          // pin: true
+        },
+      })
       
-  //     tl.to(circleRef.current,{
-  //       scale: "4"
-  //     })
-  //     // tl.to(logoRef.current,{
-  //     //   scale: "1"
-  //     // })
+      first.to(FirstCircleRef.current,{
+        scale: "4"
+      })
+
+      tl.to(circleRef.current,{
+        scale: "4"
+      })
+      // tl.to(FirstCircleRef.current,{
+      //   scale: "3"
+      // })
+      logo.to(logoRef.current,{
+        scale: "0",
+        opacity:"0"
+      })
       
-  //   },[]); // <- IMPORTANT! Scopes selector text
+      
+    },[]); // <- IMPORTANT! Scopes selector text
     
-  //   return () => ctx.revert(); // clean
+    return () => ctx.revert(); // clean
     
     
-  // }, [])
+  }, [])
 
   
   return (
@@ -150,14 +185,14 @@ export default function Hero() {
             ref={circleRef}
             // className = "circle"
             >
-           <Logo src="/images/logo.svg" 
+          </InnerCircle>
+          <Logo src="/images/logo.svg" 
             ref={logoRef}
            />
-          </InnerCircle>
         </FirstCircle>
 
       </CircleContainer>
-      
+      <Network/>
     </HeroEl>
   );
 }
