@@ -35,7 +35,7 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        <link href="http://fonts.cdnfonts.com/css/clash-display" rel="stylesheet"/>
+        <link href="http://fonts.cdnfonts.com/css/clash-display" rel="stylesheet" type="text/css"/>
           
       </Head>
       <body>
