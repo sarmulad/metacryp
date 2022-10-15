@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Colors, Devices } from "../Theme";
 import { useRef, useEffect } from "react";
-import { gsap, timeline } from "gsap";
+import { gsap, timeline, Power1 } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Network from "./Network";
 
@@ -161,6 +161,7 @@ export default function Hero() {
       tl.to(circleRef.current,{
         scale: "4",
         duration: 1,
+        ease:"Power1.easeIn",
 
       })
       // tl.to(FirstCircleRef.current,{
