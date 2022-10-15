@@ -15,8 +15,9 @@ const HeroEl = styled.article`
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
+  // margin-top: 150px;
   overflow:hidden;
-
+  
 
   @media ${Devices.Laptop} {
     // margin: 3rem 4rem 5rem 4rem;
@@ -133,7 +134,7 @@ export default function Hero() {
 
       let tl = gsap.timeline({
         scrollTrigger: {
-          trigger: circleRef.current,
+          trigger: FirstCircleRef.current,
           start: "center center",
           end: "+=100%",
           scrub: true,
@@ -151,11 +152,13 @@ export default function Hero() {
       })
       
       first.to(FirstCircleRef.current,{
-        scale: "4"
+        scale: "4",
       })
 
       tl.to(circleRef.current,{
-        scale: "4"
+        scale: "4",
+        duration: 1,
+
       })
       // tl.to(FirstCircleRef.current,{
       //   scale: "3"
