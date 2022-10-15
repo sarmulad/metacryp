@@ -1,9 +1,16 @@
 import styled from "styled-components";
+import { useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Colors, Devices } from "../Theme";
 import Button from "../styled/Button.styled";
 import Grid from "../styled/Grid.styled";
+import { gsap,} from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+
+gsap.registerPlugin(ScrollTrigger);
+
 // import Video from "./Video";
 
 const FeaturesEl = styled.article`
@@ -15,6 +22,8 @@ const FeaturesEl = styled.article`
   backdrop-filter: blur(200px);
   padding: 1rem;
   z-index:2;
+  min-height:100vh;
+  overflow:hidden;
   
   @media ${Devices.Laptop} {
    padding: 6rem 4rem 5rem 4rem;
@@ -29,13 +38,11 @@ const FeaturesEl = styled.article`
 const InnerCircle = styled.div`
   display:flex;
   align-items:center;
-  z-index:2;
   justify-content:center;
   border-radius: 50%;
   width: 300px;
   height: 300px;
   background: linear-gradient(145.6deg, #CF1395 -12.91%, rgba(110, 11, 102, 0.977546) 50.81%, rgba(34, 4, 66, 0.96) 100.61%);
-
   @media ${Devices.Laptop} {
     width: 464px;
     height: 464px;
@@ -48,7 +55,8 @@ const Title = styled.h1`
     line-height: 119px;
     text-align: center;
     color: #FFFFFF;
-   
+    position:absolute;
+    top:20%;
     @media ${Devices.Tablet} {
       font-size: 211.556px;
     }
@@ -63,6 +71,10 @@ const ExploreEl = styled.article`
   background: linear-gradient(180deg, #3757FF -18.57%, #22FFD7 100%);
   backdrop-filter: blur(200px);
   padding: 3rem 1rem;
+  clip-path: circle(100% at 50% 50%);
+  height: 100vh;
+  width:100%;
+  overflow:hidden;
   @media ${Devices.Laptop} {
     height:100vh;
     padding: 6rem 4rem 5rem 4rem;
@@ -131,16 +143,95 @@ const AnimateText = styled.h1`
     }
 `
 export default function Features() {
-  return (
-    <>
-    <FeaturesEl>
-          <InnerCircle>
-            <Title>Our Features</Title>
-          </InnerCircle>
+  const panel_one = useRef();
+  const dot = useRef();
+  const explore = useRef();
+  const titleRef = useRef();
 
-    </FeaturesEl>
+
+
+
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+
+      // const tl = gsap.timeline({
+      //   defaults: { duration: 2, ease: 'none' },
+      //   scrollTrigger: {
+      //     trigger: panel_one.current,
+      //     start: "center center",
+      //     end: "+=100%",
+      //     scrub: 1,
+      //     markers: true,
+      //     pin: true
+      //   }
+      // });
+      // let title = gsap.timeline({
+      //   defaults: { duration: 2, ease: 'none' },
+      //   scrollTrigger: {
+      //     trigger: titleRef.current,
+      //     start: "center",
+      //     end: "center",
+      //     scrub: true,
+      //     pin: true
+      //   },
+      // })
+      
+      // tl
+      //   .to(dot.current, { scale: 2})
+      //   .set(panel_one.current, { autoAlpha: 0, })
+        
+      // title
+      // .to(titleRef.current, {
+      //   scale:0.5,
+      //   opacity:0.5,
+      // })
+      // .to(titleRef.current, {
+      //   scale:0.3,
+      //   opacity:0.3,
+      // })
+      // .to(titleRef.current, {
+      //   scale:0,
+      //   opacity:0,
+      // })
+
+      const reveal = gsap.timeline({
+        defaults: {
+          ease: "none",
+          duration: 2,
+        },
+        scrollTrigger: {
+          trigger: ".container",
+          pin: true,
+          start: "top",
+          end: "+=300%",
+          scrub: true,
+          markers: true
+          
+        }
+      });
     
-    <ExploreEl>
+      reveal.from(explore.current, {
+        clipPath: "circle(0% at 50% 50%)",
+        stagger: 1
+      });
+
+
+    },[]); // <- IMPORTANT! Scopes selector text
+    return () => ctx.revert(); // clean
+    
+  }, [])
+
+
+  return (
+    <div className="container">
+      {/* <FeaturesEl ref={panel_one}>
+          <InnerCircle  ref={dot}>
+          </InnerCircle>
+          <Title ref={titleRef}>Our Features</Title>
+
+     </FeaturesEl>  */}
+    
+    <ExploreEl ref ={explore}>
         <Grid>
            <ElementContainer>
               <Element>
@@ -178,7 +269,7 @@ export default function Features() {
         </Grid>
         <AnimateText>OUR FEATURES</AnimateText>
     </ExploreEl>
-    </>
+    </div>
 
   );
 }

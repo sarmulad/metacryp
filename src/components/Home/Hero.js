@@ -126,6 +126,7 @@ export default function Hero() {
     let ctx = gsap.context(() => {
 
       let first = gsap.timeline({
+
         scrollTrigger: {
           trigger: FirstCircleRef.current,
           start: "center center",
@@ -160,16 +161,14 @@ export default function Hero() {
 
       tl.to(circleRef.current,{
         scale: "4",
-        duration: 1,
-        ease:"Power1.easeIn",
-
       })
+
       // tl.to(FirstCircleRef.current,{
       //   scale: "3"
       // })
       logo.to(logoRef.current,{
-        scale: "0",
-        opacity:"0"
+        scale:0,
+        opacity:0
       })
       
       

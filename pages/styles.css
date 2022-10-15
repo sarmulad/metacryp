@@ -3,21 +3,10 @@
 
 body{
   font-family: 'Clash Display', sans-serif;
+  overflow-x:hidden;
+  
+}
 
-}
-.innercircle{
-  position: absolute;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background: linear-gradient(231.34deg, #D515AA 6.9%, #FFE55C 90.35%);
-  border-radius: 50%;
-  width: 464px;
-  height: 464px;
-  top: 50%;
-  left: 50%;
-  margin: -232px 0px 0px -232px;
-}
 
 .faq{
   background: linear-gradient(180deg, #3757FF -18.57%, #22FFD7 100%);
@@ -48,6 +37,8 @@ body{
   max-width: 526px;
   margin: 1rem auto;
 }
+
+
 
 
 @media screen and (max-width: 1050px) {
