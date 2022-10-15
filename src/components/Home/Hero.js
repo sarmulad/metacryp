@@ -33,9 +33,11 @@ const HeroEl = styled.article`
 `;
 const CircleContainer = styled.div`
   z-index:0;
-  @media ${Devices.Laptop} {
+  margin-top:30%;
+  @media ${Devices.Tablet} {
     width: 1016px;
     height: 1016px;
+    margin-top:0;
    }
 
 `;
@@ -48,7 +50,7 @@ const FirstCircle = styled.div`
   position: relative;
   top:30%;
  
-  @media ${Devices.Laptop} {
+  @media ${Devices.Tablet} {
     width: 1016px;
     height: 1016px;
     border: 20px solid #FF786F;
@@ -67,7 +69,7 @@ const OuterCircle = styled.div`
   left: 50%;
   margin: -125px -125px;
 
-  @media ${Devices.Laptop} {
+  @media ${Devices.Tablet} {
     width: 592px;
     height: 592px;
     margin: -296px 0px 0px -296px;
@@ -90,7 +92,7 @@ const InnerCircle = styled.div`
   left: 50%;
   margin: -100px  -100px;
  
-  @media ${Devices.Laptop} {
+  @media ${Devices.Tablet} {
     width: 464px;
     height: 464px;
     margin: -232px;
@@ -103,9 +105,10 @@ const Logo = styled.img`
   //  padding-right: 1rem;
    position: absolute;
    top: 45%;
-   left: 35%;
-  @media ${Devices.Laptop} {
+   left: 30%;
+  @media ${Devices.Tablet} {
     width: 300px;
+    left: 35%;
     // margin: -200px;
 
    }
@@ -144,7 +147,7 @@ export default function Hero() {
       let logo = gsap.timeline({
         scrollTrigger: {
           trigger: logoRef.current,
-          start: "top center",
+          start: "center center",
           end: "+=100%",
           scrub: true,
           // pin: true

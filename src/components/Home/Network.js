@@ -10,8 +10,10 @@ const NetworkEl = styled.article`
   display: flex;
   flex-direction: column;
   z-index:2;
+  max-width:95%;
   @media ${Devices.Laptop} {
-    padding: 1rem 10%;
+    padding: 1rem 5%;
+     max-width:auto;
   }
 `;
 const SectionContainer = styled.div`
