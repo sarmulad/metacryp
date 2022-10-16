@@ -34,6 +34,10 @@ const HeroEl = styled.article`
 const CircleContainer = styled.div`
   z-index:0;
   margin-top:30%;
+  background: linear-gradient(231.34deg, #D515AA 6.9%, #FFE55C 90.35%);
+  border-radius:50%;
+  width: 370px;
+  height: 370px;
   @media ${Devices.Tablet} {
     width: 1016px;
     height: 1016px;
@@ -42,39 +46,51 @@ const CircleContainer = styled.div`
 
 `;
 const FirstCircle = styled.div`
-  // background:  linear-gradient(231.34deg, #D515AA 6.9%, #FFE55C 90.35%);
+  background:${Colors.Background};
   border-radius: 50%;
   width: 350px;
   height: 350px;
-  border: 5px solid #FF786F;
   position: relative;
-  top:30%;
- 
+  padding: 2rem;
+  // top:30%;
   @media ${Devices.Tablet} {
-    width: 1016px;
-    height: 1016px;
-    border: 20px solid #FF786F;
-    top:0%;
+    width: 970px;
+    height: 970px;
+    top:20px;
+    left:20px;
    }
 
 `;
-
-const OuterCircle = styled.div`
-  border-radius: 50%;
-  width: 250px;
-  height: 250px;
-  border: 5px solid #FF786F;
+const Gradient = styled.div`
+  background:  linear-gradient(231.34deg, #D515AA 6.9%, #FFE55C 90.35%);
+  border-radius:50%;
+  width: 290px;
+  height: 290px;
   position: absolute;
   top: 50%;
   left: 50%;
-  margin: -125px -125px;
+  margin: -145px -145px;
+  @media ${Devices.Tablet} {
+    width: 620px;
+    height: 620px;
+    margin: -310px -310px;
+  }
+
+`
+const OuterCircle = styled.div`
+  border-radius: 50%;
+  width: 270px;
+  height: 270px;
+  position: absolute;
+  background:${Colors.Background};
+  top: 50%;
+  left: 50%;
+  margin: -135px 0px 0px -135px;
 
   @media ${Devices.Tablet} {
-    width: 592px;
-    height: 592px;
-    margin: -296px 0px 0px -296px;
-    border: 30px solid #FF786F;
-
+    width: 572px;
+    height: 572px;
+    margin: -286px 0px 0px -286px;
    }
   
 `;
@@ -92,6 +108,7 @@ const InnerCircle = styled.div`
   left: 50%;
   margin: -100px  -100px;
  
+  
   @media ${Devices.Tablet} {
     width: 464px;
     height: 464px;
@@ -114,6 +131,7 @@ const Logo = styled.img`
    }
   
 `;
+
 
 
 export default function Hero() {
@@ -151,6 +169,8 @@ export default function Hero() {
           start: "center center",
           end: "+=100%",
           scrub: true,
+          yoyo: true, 
+
           // pin: true
         },
       })
@@ -186,10 +206,12 @@ export default function Hero() {
         <FirstCircle
          ref={FirstCircleRef}
          >
-          <OuterCircle ></OuterCircle>
+           <Gradient>
+             <OuterCircle >
+             </OuterCircle>
+           </Gradient>
           <InnerCircle 
             ref={circleRef}
-            // className = "circle"
             >
           </InnerCircle>
           <Logo src="/images/logo.svg" 

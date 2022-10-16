@@ -72,7 +72,7 @@ const ExploreEl = styled.article`
   backdrop-filter: blur(200px);
   padding: 3rem 1rem;
   clip-path: circle(100% at 50% 50%);
-  height: 100vh;
+  // height: 100vh;
   width:100%;
   overflow:hidden;
   @media ${Devices.Laptop} {
@@ -197,7 +197,7 @@ export default function Features() {
       const reveal = gsap.timeline({
         defaults: {
           ease: "none",
-          duration: 2,
+          duration: 1,
         },
         scrollTrigger: {
           trigger: ".container",
@@ -205,7 +205,6 @@ export default function Features() {
           start: "top",
           end: "+=300%",
           scrub: true,
-          markers: true
           
         }
       });
