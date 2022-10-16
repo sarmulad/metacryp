@@ -58,18 +58,19 @@ const FirstCircle = styled.div`
     height: 970px;
     top:20px;
     left:20px;
+    margin:0px;
    }
 
 `;
 const Gradient = styled.div`
   background:  linear-gradient(231.34deg, #D515AA 6.9%, #FFE55C 90.35%);
   border-radius:50%;
-  width: 290px;
-  height: 290px;
+  width: 250px;
+  height: 250px;
   position: absolute;
   top: 50%;
   left: 50%;
-  margin: -145px -145px;
+  margin: -125px -125px;
   @media ${Devices.Tablet} {
     width: 620px;
     height: 620px;
@@ -79,13 +80,13 @@ const Gradient = styled.div`
 `
 const OuterCircle = styled.div`
   border-radius: 50%;
-  width: 270px;
-  height: 270px;
+  width: 230px;
+  height: 230px;
   position: absolute;
   background:${Colors.Background};
   top: 50%;
   left: 50%;
-  margin: -135px 0px 0px -135px;
+  margin: -115px 0px 0px -115px;
 
   @media ${Devices.Tablet} {
     width: 572px;
