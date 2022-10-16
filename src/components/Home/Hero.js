@@ -48,10 +48,10 @@ const CircleContainer = styled.div`
 const FirstCircle = styled.div`
   background:${Colors.Background};
   border-radius: 50%;
-  width: 350px;
-  height: 350px;
+  width: 340px;
+  height: 340px;
   position: relative;
-  padding: 2rem;
+  margin:15px;
   // top:30%;
   @media ${Devices.Tablet} {
     width: 970px;
