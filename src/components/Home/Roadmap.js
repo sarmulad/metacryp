@@ -8,7 +8,7 @@ const NetworkEl = styled.article`
   color: ${Colors.Black};
   display: flex;
   flex-direction: column;
-  // padding:3rem 1rem;
+  padding:3rem 1rem;
   @media ${Devices.Laptop} {
     padding: 0rem 10%;
   }

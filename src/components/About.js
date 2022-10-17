@@ -10,7 +10,7 @@ const NetworkEl = styled.article`
   padding: 1rem;
   display: flex;
   flex-direction: column;
-
+  overflow:hidden;
   @media ${Devices.Laptop} {
     padding: 4rem 5%;
   }
@@ -72,7 +72,10 @@ const EnterOuter = styled.div`
     z-index:2;
     border-radius:50%;   
     border: 2px solid #22FFD7;
-    
+    display:none;
+    @media ${Devices.Tablet} {
+      display:block;
+    }
 `
 const Enter = styled.div`
     width: 124px;
@@ -87,6 +90,7 @@ const Enter = styled.div`
     padding:1rem;
     text-align:center;
     background: linear-gradient(180deg, #3757FF -18.57%, #22FFD7 100%);
+    
 `
 
 

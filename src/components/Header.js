@@ -66,13 +66,17 @@ const NavItem = styled.a`
 const SearchIcon = styled.span`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 
   @media ${Devices.Laptop} {
     display: none;
   }
 `;
 const MenuIcon = styled(SearchIcon)``;
+
+const Menu = styled.img``;
+
+
 
 
 
@@ -85,23 +89,7 @@ export default function Header({ mobileMenu }) {
 
   return (
     <HeaderEl>
-      <MenuIcon>
-        {MobileMenuIsOpen ? (
-          <IoClose
-            style={{ fontSize: "2.5rem" }}
-            color={Colors.Primary}
-            onClick={() => {
-              toggleMenu();
-            }}
-          />
-        ) : (
-          <FiMenu
-            onClick={() => {
-              toggleMenu();
-            }}
-          />
-        )}
-      </MenuIcon>
+      
       <Center>
         <NavItem href="/"><Logo src="/images/logo.svg" /></NavItem>
         <Nav>
@@ -122,6 +110,24 @@ export default function Header({ mobileMenu }) {
           </ul>
         </Nav>
       </Center>
+      <MenuIcon>
+        {MobileMenuIsOpen ? (
+          <IoClose
+            style={{ fontSize: "2.5rem" }}
+            color={Colors.Primary}
+            onClick={() => {
+              toggleMenu();
+            }}
+          />
+        ) : (
+          <Menu
+            src="images/icon/menu.svg"
+            onClick={() => {
+              toggleMenu();
+            }}
+          />
+        )}
+      </MenuIcon>
     </HeaderEl>
   );
 }

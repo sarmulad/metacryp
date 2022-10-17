@@ -7,16 +7,7 @@ body{
   
 }
 
-.gradient{
-  background:  linear-gradient(231.34deg, #D515AA 6.9%, #FFE55C 90.35%);
-  border-radius:50%;
-  width: 620px;
-  height: 620px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: -310px -310px;
-}
+
 
 .faq{
   background: linear-gradient(180deg, #3757FF -18.57%, #22FFD7 100%);
