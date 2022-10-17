@@ -23,7 +23,6 @@ const NetworkEl = styled.article`
   padding: 1rem;
   display: flex;
   flex-direction: column;
-
   @media ${Devices.Laptop} {
     padding: 1rem 10%;
   }

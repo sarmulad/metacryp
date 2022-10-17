@@ -1,7 +1,12 @@
 import styled from "styled-components";
 import Button from "../styled/Button.styled";
 import { Colors, Devices } from "../Theme";
+import { useRef, useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
+
+gsap.registerPlugin(ScrollTrigger)
 
 const NetworkEl = styled.article`
   // background: ${Colors.GradientsRed};
@@ -10,10 +15,12 @@ const NetworkEl = styled.article`
   display: flex;
   flex-direction: column;
   z-index:2;
-  max-width:95%;
+  // max-width:95%;
+  // background: linear-gradient(231.34deg, #D515AA 6.9%, #FFE55C 90.35%);
   @media ${Devices.Laptop} {
-    padding: 1rem 5%;
+     padding: 10rem 5%;
      max-width:auto;
+     height:100vh;
   }
 `;
 const SectionContainer = styled.div`
@@ -46,10 +53,11 @@ const Title = styled.h1`
   font-weight: 700;
   font-size: 30px;
   line-height: 40px;
-   text-align:start;
+  text-align:start;
+  color:${Colors.White};
   @media ${Devices.Tablet} {
     font-size: 47px;
-    line-height: 64px;
+    line-height: 50px;
   }
 `;
 const Text = styled.p`
@@ -58,10 +66,12 @@ const Text = styled.p`
     font-size: 16px;
     line-height: 32px;
     text-align:start;
-
+    color:${Colors.White};
     @media ${Devices.Tablet} {
-      font-size: 25px;
+      font-size: 20px;
       line-height: 40px;
+       max-width:85%;
+
     }
 `;
 const BtnContainer = styled.div`
@@ -82,11 +92,41 @@ const Illustration = styled.img`
 `;
 
 export default function Network() {
+  const containerRef = useRef();
+
+  useEffect(() => {
+  
+    let ctx = gsap.context(() => {
+
+      const tl = gsap.timeline({
+  
+        scrollTrigger: {
+        trigger: containerRef.current,
+        pin: true,
+        scrub: true,
+        end: () => `+=${containerRef.offsetWidth}`
+          
+      }
+      
+    })
+    tl
+    .to(containerRef.current, { duration: 5, background: "linear-gradient(231.34deg, #D515AA 6.9%, #FFE55C 90.35%)", ease: "none" }, 0)
+      
+      
+    },[]); // <- IMPORTANT! Scopes selector text
+    
+    return () => ctx.revert(); // clean
+    
+    
+  }, [])
+
+
+
     return (
-      <NetworkEl>
+      <NetworkEl ref={containerRef}>
         <SectionContainer>
           <LeftSection>
-            <Title> Welcome to the MetaCryp Network Unwind - Create and Escape</Title>
+            <Title> <span style={{color:"white"}}>Welcome to the</span><br/> <span style={{color:'#6E0B66F9'}}> MetaCryp Network  </span><br/> <small style={{fontWeight:'400'}}>Unwind - Create and Escape</small> </Title>
             <Text>Escape to a World of Virtual Reality.With Metacryp you can leave  the hustle 
                 and bustle of daily life behind to explore a world of endless possibilities
             </Text>

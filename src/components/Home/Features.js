@@ -22,11 +22,11 @@ const FeaturesEl = styled.article`
   backdrop-filter: blur(200px);
   padding: 1rem;
   z-index:2;
-  min-height:100vh;
-  overflow:hidden;
-  
+  height:auto;
   @media ${Devices.Laptop} {
    padding: 6rem 4rem 5rem 4rem;
+   height:100vh;
+
   }
 
 //   @media ${Devices.LaptopL} {
@@ -68,8 +68,6 @@ const ExploreEl = styled.article`
   text-align: center;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(180deg, #3757FF -18.57%, #22FFD7 100%);
-  backdrop-filter: blur(200px);
   padding: 3rem 1rem;
   clip-path: circle(100% at 50% 50%);
   // height: 100vh;
@@ -130,29 +128,55 @@ const Icon = styled.img`
 const AnimateText = styled.h1`
     font-style: normal;
     font-weight: 700;
-    font-size: 30px;
-    line-height: 40px;
+    font-size: 100px;
     letter-spacing: 0.02em;
     color: transparent;
     -webkit-text-stroke: 2px #3757FF;
      margin-top:2rem;
-   
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    -moz-animation: scroll 6S linear infinite;
+    -webkit-animation: scroll 6S linear infinite;
+    animation: scroll 6S linear infinite;
+    animation-direction: reverse;
+    // animation-play-state:running;
+    white-space: nowrap;
     @media ${Devices.Laptop} {
       font-size: 157px;
       line-height: 180px;
     }
+   
+    @-webkit-keyframes scroll{
+      from { -webkit-transform: translateX(100%); }
+      to { -webkit-transform: translateX(-100%); }
+    }
+    @keyframes scroll{
+      from {
+        -moz-transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+      }
+      to {
+        -moz-transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+
 `
 export default function Features() {
   const panel_one = useRef();
   const dot = useRef();
   const explore = useRef();
   const titleRef = useRef();
+  const container = useRef();
 
 
 
 
-  useEffect(() => {
-    let ctx = gsap.context(() => {
+
+  // useEffect(() => {
+  //   let ctx = gsap.context(() => {
       // const tl = gsap.timeline({
       //   defaults: { duration: 2, ease: 'none' },
       //   scrollTrigger: {
@@ -193,42 +217,45 @@ export default function Features() {
       //   opacity:0,
       // })
 
-      const reveal = gsap.timeline({
-        defaults: {
-          ease: "none",
-          duration: 1,
-        },
-        scrollTrigger: {
-          trigger: explore.current,
-          pin: true,
-          start: "top",
-          end: "+=300%",
-          scrub: true,
+  //     const reveal = gsap.timeline({
+  //       defaults: {
+  //         ease: "none",
+  //         duration: 1,
+  //       },
+  //       scrollTrigger: {
+  //         trigger: explore.current,
+  //         pin: true,
+  //         start: "top",
+  //         end: "+=300%",
+  //         scrub: true,
           
-        }
-      });
+  //       }
+  //     });
     
-      reveal.from(explore.current, {
-        clipPath: "circle(0% at 50% 50%)",
-        // stagger: 1
-      });
+  //     reveal.from(explore.current, {
+  //       clipPath: "circle(0% at 50% 50%)",
+  //       duration: 3,
+  //       stagger: 1
+  //     });
 
 
-    },[]); // <- IMPORTANT! Scopes selector text
-    return () => ctx.revert(); // clean
+  //   },[]); // <- IMPORTANT! Scopes selector text
+  //   return () => ctx.revert(); // clean
     
-  }, [])
+  // }, [])
 
 
   return (
-    <div className="container">
-      {/* <FeaturesEl ref={panel_one}>
-          <InnerCircle  ref={dot}>
-          </InnerCircle>
-          <Title ref={titleRef}>Our Features</Title>
-
-     </FeaturesEl>  */}
+    <>
     
+    <FeaturesEl ref={panel_one}>
+    <InnerCircle  ref={dot}>
+    </InnerCircle>
+    <Title ref={titleRef}>Our Features</Title>
+     </FeaturesEl>   
+    <div ref={container} className="container">
+     <div className="overlay"></div>
+     <video src="/images/animation.mp4" autoPlay loop muted type="video/mp4"/>
     <ExploreEl ref ={explore}>
         <Grid>
            <ElementContainer>
@@ -265,9 +292,10 @@ export default function Features() {
 
             </ElementContainer>
         </Grid>
-        <AnimateText>OUR FEATURES</AnimateText>
+        <AnimateText>OUR FEATURES </AnimateText>
     </ExploreEl>
     </div>
+    </>
 
   );
 }
