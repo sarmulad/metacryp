@@ -76,7 +76,7 @@ const ExploreEl = styled.article`
   width:100%;
   overflow:hidden;
   @media ${Devices.Laptop} {
-    height:100vh;
+    // height:100vh;
     padding: 6rem 4rem 5rem 4rem;
   }
 `;
@@ -153,7 +153,6 @@ export default function Features() {
 
   useEffect(() => {
     let ctx = gsap.context(() => {
-
       // const tl = gsap.timeline({
       //   defaults: { duration: 2, ease: 'none' },
       //   scrollTrigger: {
@@ -200,7 +199,7 @@ export default function Features() {
           duration: 1,
         },
         scrollTrigger: {
-          trigger: ".container",
+          trigger: explore.current,
           pin: true,
           start: "top",
           end: "+=300%",
@@ -211,7 +210,7 @@ export default function Features() {
     
       reveal.from(explore.current, {
         clipPath: "circle(0% at 50% 50%)",
-        stagger: 1
+        // stagger: 1
       });
 
 
