@@ -16,11 +16,14 @@ const NetworkEl = styled.article`
   flex-direction: column;
   z-index:2;
   max-width:95%;
+  margin-top: 13rem;
   // background: linear-gradient(231.34deg, #D515AA 6.9%, #FFE55C 90.35%);
   @media ${Devices.Laptop} {
      padding: 10rem 5%;
      max-width:auto;
      height:100vh;
+     margin-top: 0rem;
+
   }
 `;
 const SectionContainer = styled.div`

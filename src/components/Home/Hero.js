@@ -15,10 +15,8 @@ const HeroEl = styled.article`
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  // margin-top: 150px;
+  // margin-bottom: 150px;
   overflow:hidden;
-  
-
   @media ${Devices.Laptop} {
     // margin: 3rem 4rem 5rem 4rem;
     // margin-top: -100px;
