@@ -3,6 +3,7 @@ import { BsInstagram, BsMedium, BsDiscord, BsTelegram } from "react-icons/bs";
 import { GrTwitter } from "react-icons/gr";
 import { Colors, Devices } from "./Theme";
 import Image from "next/image";
+import Link from "next/link";
 
 const FooterEl = styled.footer`
   display: flex;
@@ -113,7 +114,7 @@ export default function Footer() {
       </Socials>
       </Container>
       <Links>
-        <a href="#">About</a>
+        <Link href="/about">About</Link>
         <a href="#">Get MetaCryp</a>
         <a href="#">Privacy Policy</a>
       </Links>

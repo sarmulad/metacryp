@@ -18,7 +18,7 @@ const HeaderEl = styled.header`
   padding: 1rem 1.5rem;
   top: 10px;
   // background-color: ${Colors.Background};
-  position: sticky;
+  position: fixed;
   z-index:100;
   font-family: 'Clash Display', sans-serif;
   // opacity:0.8;
@@ -120,7 +120,7 @@ export default function Header({ mobileMenu }) {
             <li>
               <NavItem href="#">Whitepaper</NavItem>
             </li>
-            <Button background="#32E2B8" width="140px" round>Login<Icon src="/images/icon/arrow-right.svg"/></Button>
+            <Button background="#32E2B8" width="140px" round="true">Login<Icon src="/images/icon/arrow-right.svg"/></Button>
           </ul>
         </Nav>
       </Center>

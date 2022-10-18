@@ -109,7 +109,7 @@ function MyApp({ Component, pageProps }) {
         <title>Metacrypt</title>
         <meta
           name="description"
-          content="Cleaned create-next-app including styled-components and configured theme"
+          content="Metacrypt token"
         />
         <link rel="icon" href="/favicon.png" />
       </Head>

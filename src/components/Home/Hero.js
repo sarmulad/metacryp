@@ -136,6 +136,7 @@ const Logo = styled.img`
 
 
 export default function Hero() {
+  const triggerRef = useRef();
   const circleRef = useRef();
   const logoRef = useRef();
   const FirstCircleRef = useRef();
@@ -147,33 +148,38 @@ export default function Hero() {
       let first = gsap.timeline({
 
         scrollTrigger: {
-          trigger: FirstCircleRef.current,
-          start: "center center",
+          trigger: triggerRef.current,
+          start: "top",
           end: "+=100%",
-          scrub: true,
+          scrub: 1,
           // pin: true
         },
       })
 
       let tl = gsap.timeline({
         scrollTrigger: {
-          trigger: FirstCircleRef.current,
-          start: "center center",
+          trigger: triggerRef.current,
+          start: "top",
           end: "+=100%",
-          scrub: true,
-          pinSpacing:false,
+          scrub: 1,
+          // pinSpacing:false,
           // pin: true
         },
       })
       let logo = gsap.timeline({
         scrollTrigger: {
-          trigger: logoRef.current,
-          start: "center center",
+          trigger: triggerRef.current,
+          start: "top",
           end: "+=100%",
           scrub: true,
-          yoyo: true, 
           // pin: true
         },
+      })
+
+
+      logo.to(logoRef.current,{
+        scale:0,
+        opacity:0
       })
       
       first.to(FirstCircleRef.current,{
@@ -184,25 +190,18 @@ export default function Hero() {
         scale: "4",
       })
 
-      // tl.to(FirstCircleRef.current,{
-      //   scale: "3"
-      // })
-      logo.to(logoRef.current,{
-        scale:0,
-        opacity:0
-      })
       
       
-    },[]); // <- IMPORTANT! Scopes selector text
+    },[]);
     
-    return () => ctx.revert(); // clean
+    return () => ctx.revert(); 
     
     
   }, [])
 
 
   return (
-    <HeroEl>
+    <HeroEl ref={triggerRef}>
       <CircleContainer ref={FirstCircleRef}>
         <FirstCircle
          >
