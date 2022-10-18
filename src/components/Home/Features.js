@@ -56,7 +56,7 @@ const Title = styled.h1`
     text-align: center;
     color: #FFFFFF;
     position:absolute;
-    margin-top:1rem;
+    margin-top:20%;
     @media ${Devices.Tablet} {
       font-size: 211.556px;
       margin-top:3rem;

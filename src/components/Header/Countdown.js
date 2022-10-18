@@ -32,7 +32,7 @@ const CountdownItem = styled.div`
    h2{
     width: 30px;
     height: 30px;
-    padding: 0.7rem 0.5rem;
+    padding:0.5rem;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(3.71575px);
     border-radius: 8.91781px;
@@ -41,6 +41,7 @@ const CountdownItem = styled.div`
     @media ${Devices.Tablet} {
       width: 50px;
       height: 50px;
+      padding: 0.7rem 0.5rem;
       font-size:23px;
    }
 

@@ -33,7 +33,7 @@ const RightSection = styled(motion.div)`
    flex-direction:column;
    row-gap:3rem;
    margin-top:2rem;
-   
+   overflow:hidden;
    @media ${Devices.Tablet} {
     margin-left:2rem;
   }

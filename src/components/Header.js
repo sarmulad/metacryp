@@ -33,10 +33,10 @@ const Center = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
-  gap: 2rem;
-  // justify-content:space-between;
+  gap: 1rem;
+  justify-content:space-between;
   @media ${Devices.Laptop} {
-    gap: 5rem;
+    gap: 8rem;
   }
 `;
 
