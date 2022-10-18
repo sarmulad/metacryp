@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Button from "../styled/Button.styled";
 import { Colors, Devices } from "../Theme";
 
 

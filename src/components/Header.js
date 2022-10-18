@@ -1,9 +1,12 @@
 import styled from "styled-components";
-import { FiMenu } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
 import { Colors, Devices } from "./Theme";
-import { useState } from "react";
-
+import { useEffect,useState } from "react";
+import dynamic from 'next/dynamic'
+const Countdown = dynamic(
+  () => import('./Header/Countdown'),
+  { ssr: false }
+)
 const HeaderEl = styled.header`
   display: flex;
   color: ${Colors.White};
@@ -12,7 +15,7 @@ const HeaderEl = styled.header`
   height: 10%;
   gap: 1rem;
   padding: 1rem 1.5rem;
-  top: 0;
+  top: 10px;
   // background-color: ${Colors.Background};
   position: sticky;
   z-index:100;
@@ -20,18 +23,17 @@ const HeaderEl = styled.header`
   // opacity:0.8;
   @media ${Devices.Tablet} {
     position: fixed;
+    height:90px;
   }
-  svg {
-    font-size: 2rem;
-    cursor: pointer;
-  }
+  
 `;
 
 const Center = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content:space-between;
+  gap: 5rem;
 `;
 
 
@@ -76,9 +78,7 @@ const MenuIcon = styled(SearchIcon)``;
 
 const Menu = styled.img``;
 
-
-
-
+let targetDate = new Date("december 30,2022");
 
 export default function Header({ mobileMenu }) {
   const { MobileMenuIsOpen, setMobileMenuIsOpen } = mobileMenu;
@@ -89,9 +89,9 @@ export default function Header({ mobileMenu }) {
 
   return (
     <HeaderEl>
-      
       <Center>
         <NavItem href="/"><Logo src="/images/logo.svg" /></NavItem>
+        <Countdown targetDate={targetDate} suppressHydrationWarning/>
         <Nav>
           <ul>
             <li>

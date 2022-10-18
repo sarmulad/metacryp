@@ -1,9 +1,11 @@
 import styled from "styled-components";
 import { Colors, Devices } from "../Theme";
 import Image from "next/image";
-// import ellipse1 from ".//images/ellipse.svg"
+import { motion } from "framer-motion";
+import { FadeAnimate , imageFade, imageAnimate, rotateAnimate} from "../animation/Animation";
 
-const TokenEl = styled.article`
+
+const TokenEl = styled(motion.article)`
   background: url("images/background.svg");
   background-size:cover;
   color: ${Colors.Black};
@@ -15,7 +17,7 @@ const TokenEl = styled.article`
     padding: 5rem 10%;
   }
 `;
-const SectionContainer = styled.div`
+const SectionContainer = styled(motion.div)`
   display: flex;
   margin-bottom: 100px;
   gap: 1rem;
@@ -27,14 +29,14 @@ const SectionContainer = styled.div`
   }
 `;
 
-const LeftSection = styled.div`
+const LeftSection = styled(motion.div)`
   display: flex;
   flex: 1rem;
   flex-direction: column;
   gap: 1rem;
 `;
 
-const RightSection = styled.div`
+const RightSection = styled(motion.div)`
   margin-top:1rem;
   @media ${Devices.Tablet} {
     margin-left:2rem;
@@ -43,7 +45,7 @@ const RightSection = styled.div`
 
 `;
 
-const Title = styled.h1`
+const Title = styled(motion.h1)`
   font-family: 'Clash Display';
   font-style: normal;
   font-weight: 700;
@@ -60,7 +62,7 @@ const Title = styled.h1`
 
   }
 `;
-const Text = styled.p`
+const Text = styled(motion.p)`
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -73,18 +75,18 @@ const Text = styled.p`
     }
 `;
 
-const Icon = styled.img`
+const Icon = styled(motion.img)`
     width:18px;
     height:11px;
     margin-right: 5px;
 
 `;
-const Illustration = styled.img`
+const Illustration = styled(motion.img)`
 //   max-width: 80%;
 //   max-height: 80%;
 `;
 
-const TokenDist = styled.div`
+const TokenDist = styled(motion.div)`
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-content: space-around;
@@ -103,7 +105,7 @@ const TokenDist = styled.div`
    
   }
 `
-const TokenElement = styled.div`
+const TokenElement = styled(motion.div)`
   color: ${Colors.White};
   text-align:center;  
 `
@@ -122,7 +124,7 @@ const H6 = styled.h6`
     line-height: 20px;
 `
 
-const TableContainer = styled.div`
+const TableContainer = styled(motion.div)`
    border: 1px solid #FDFDFD;
     border-radius: 30px;
     padding: 3rem 2rem;
@@ -136,7 +138,7 @@ const TableContainer = styled.div`
       }
 
 `
-const Table = styled.table`
+const Table = styled(motion.table)`
     font-style: normal;
     font-weight: 700;
     font-size: 14px;
@@ -173,9 +175,8 @@ const Tr = styled.tr`
     border:0.6px solid #200A34;
 `
 
-const LineBig = styled.img`
+const LineBig = styled(motion.img)`
   display:none;
-
   @media ${Devices.Laptop} {
     display:block;
   }
@@ -184,9 +185,14 @@ const LineBig = styled.img`
 
 export default function Token() {
     return (
-      <TokenEl>
-         <Title>  Token Distribution & Fund Utilization </Title>
-         <TokenDist>
+      <TokenEl 
+      initial={"offscreen"}
+      whileInView={"onscreen"}
+      viewport={{once:false, amount:0.3}}
+      transition={{staggerChildren:0.3}}
+       >
+         <Title variants={imageFade}>  Token Distribution & Fund Utilization </Title>
+         <TokenDist variants={imageFade}>
           <TokenElement>
              <H6>Token Name</H6>
              <H2>METACRYP</H2>  
@@ -208,11 +214,20 @@ export default function Token() {
              <H2>BEP-20</H2>
           </TokenElement>
          </TokenDist>
-        <SectionContainer>
-          <LeftSection>
+        <SectionContainer 
+         initial={"offscreen"}
+         whileInView={"onscreen"}
+         viewport={{once:false, amount:0.5}}
+         transition={{staggerChildren:0.5}}
+        >
+          <LeftSection
+           variants={rotateAnimate}
+          >
             <Illustration src="/images/Pie.svg"/>
           </LeftSection>
-          <RightSection>
+          <RightSection
+           variants={FadeAnimate}
+          >
          <TableContainer>
           <Table>
             <tbody>
@@ -278,7 +293,11 @@ export default function Token() {
          </TableContainer>
           </RightSection>
         </SectionContainer>
-        <Text>
+        <Text
+            initial={"offscreen"}
+            whileInView={"onscreen"}
+           variants={imageAnimate}
+        >
             The maximum amount of MetaCryp token ($MTCR) That will ever be created and be in 
             circulation at any point in time is 500,000,000 (500 million) $MTCR.  
             MetaCryp tokens are BEP-20 tokens hosted on Binance smart Chain.

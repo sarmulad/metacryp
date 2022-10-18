@@ -161,6 +161,7 @@ export default function Hero() {
           start: "center center",
           end: "+=100%",
           scrub: true,
+          pinSpacing:false,
           // pin: true
         },
       })
@@ -171,7 +172,6 @@ export default function Hero() {
           end: "+=100%",
           scrub: true,
           yoyo: true, 
-
           // pin: true
         },
       })
@@ -200,12 +200,11 @@ export default function Hero() {
     
   }, [])
 
-  
+
   return (
     <HeroEl>
-      <CircleContainer >
+      <CircleContainer ref={FirstCircleRef}>
         <FirstCircle
-         ref={FirstCircleRef}
          >
            <Gradient>
              <OuterCircle >

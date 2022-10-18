@@ -1,7 +1,8 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import { Colors } from "../Theme";
 
-const Button = styled.button`
+const Button = styled(motion.button)`
   display: flex;
   align-items: center;
   justify-content: center;

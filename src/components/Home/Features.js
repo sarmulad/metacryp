@@ -5,33 +5,31 @@ import Link from "next/link";
 import { Colors, Devices } from "../Theme";
 import Button from "../styled/Button.styled";
 import Grid from "../styled/Grid.styled";
+import { FadeAnimate } from "../animation/Animation";
 import { gsap,} from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { motion } from "framer-motion";
 
 
 gsap.registerPlugin(ScrollTrigger);
 
-// import Video from "./Video";
 
 const FeaturesEl = styled.article`
   display: flex;
   text-align: center;
   flex-direction: column;
   align-items: center;
+  padding: 1rem;
+  height:auto;
+  z-index:0;
+  overflow:hidden;
   background: linear-gradient(180deg, #3757FF -18.57%, #22FFD7 100%);
   backdrop-filter: blur(200px);
-  padding: 1rem;
-  z-index:2;
-  height:auto;
+  position:relative;
   @media ${Devices.Laptop} {
    padding: 6rem 4rem 5rem 4rem;
    height:100vh;
-
   }
-
-//   @media ${Devices.LaptopL} {
-//     margin: 3rem 10rem 5rem 10rem;
-//   }
 `;
 
 
@@ -56,7 +54,7 @@ const Title = styled.h1`
     text-align: center;
     color: #FFFFFF;
     position:absolute;
-    top:20%;
+    margin-top:3rem;
     @media ${Devices.Tablet} {
       font-size: 211.556px;
     }
@@ -79,7 +77,7 @@ const ExploreEl = styled.article`
   }
 `;
 
-const ElementContainer = styled.div`
+const ElementContainer = styled(motion.div)`
     display:flex;
     flex-direction:column;
     gap:2rem;
@@ -173,21 +171,9 @@ export default function Features() {
 
 
 
-
-
-  // useEffect(() => {
-  //   let ctx = gsap.context(() => {
-      // const tl = gsap.timeline({
-      //   defaults: { duration: 2, ease: 'none' },
-      //   scrollTrigger: {
-      //     trigger: panel_one.current,
-      //     start: "center center",
-      //     end: "+=100%",
-      //     scrub: 1,
-      //     markers: true,
-      //     pin: true
-      //   }
-      // });
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+     
       // let title = gsap.timeline({
       //   defaults: { duration: 2, ease: 'none' },
       //   scrollTrigger: {
@@ -217,37 +203,76 @@ export default function Features() {
       //   opacity:0,
       // })
 
-  //     const reveal = gsap.timeline({
-  //       defaults: {
-  //         ease: "none",
-  //         duration: 1,
-  //       },
-  //       scrollTrigger: {
-  //         trigger: explore.current,
-  //         pin: true,
-  //         start: "top",
-  //         end: "+=300%",
-  //         scrub: true,
-          
-  //       }
-  //     });
-    
-  //     reveal.from(explore.current, {
-  //       clipPath: "circle(0% at 50% 50%)",
-  //       duration: 3,
-  //       stagger: 1
-  //     });
+      const reveal = gsap.timeline({
+        defaults: {
+          ease: "none",
+          // duration: 4,
+        },
+        scrollTrigger: {
+          trigger: panel_one.current,
+          start: "top",
+          end: "+=100% ",
+          // end: () => `+=${document.querySelector(".mask").offsetWidth}`,
+          scrub: 1,
+          // markers:true,
+          // pin:true,
+          // pinSpacing:false,
+        }
+      });
+
+      const down = gsap.timeline({
+        defaults: {
+          ease: "none",
+          // duration: 4,
+        },
+        scrollTrigger: {
+          trigger: panel_one.current,
+          start: "top",
+          end: "+=100% ",
+          // end: () => `+=${document.querySelector(".mask").offsetWidth}`,
+          scrub: 1,
+          markers:true,
+          // pin:true,
+        }
+      });
+       
+      reveal
+       .to(dot.current, {
+         scale:3.5,
+       })
+
+       down.to(titleRef.current, {
+          scale:0,
+          opacity:0
+       })
 
 
-  //   },[]); // <- IMPORTANT! Scopes selector text
-  //   return () => ctx.revert(); // clean
+      //  const show = gsap.timeline({
+      //   defaults: { duration: 2, ease: 'none' },
+      //   scrollTrigger: {
+      //     trigger:".container",
+      //     start: "top",
+      //     end: "+=300%",
+      //     scrub: 1,
+      //     markers: true,
+      //     pin: true
+      //   }
+      // });
+
+      // show.from(explore.current, {
+      //   clipPath: "circle(0% at 50% 50%)",
+      //   stagger: 1
+      // });
+      // show.set(".container", {duration: 0, display:"block"}) 
+
+    },[]);
+    return () => ctx.revert(); // clean
     
-  // }, [])
+  }, [])
 
 
   return (
     <>
-    
     <FeaturesEl ref={panel_one}>
     <InnerCircle  ref={dot}>
     </InnerCircle>
@@ -256,9 +281,15 @@ export default function Features() {
     <div ref={container} className="container">
      <div className="overlay"></div>
      <video src="/images/animation.mp4" autoPlay loop muted type="video/mp4"/>
-    <ExploreEl ref ={explore}>
-        <Grid>
-           <ElementContainer>
+     <ExploreEl ref ={explore}>
+        <Grid 
+          initial={"offscreen"}
+          whileInView={"onscreen"}
+          viewport={{once:false, amount:0.5}}
+          transition={{staggerChildren:0.5}}>
+           <ElementContainer
+              variants={FadeAnimate}
+           >
               <Element>
                  <Image src="/images/icon/svg2.svg" alt="" width="57px" height='31px'/>
                  <P2>Explore Vast Landscapes & Multiple Regions</P2>
@@ -268,7 +299,10 @@ export default function Features() {
               </Element>
               <Button round width="160px" background="linear-gradient(180deg, #3757FF -18.57%, #22FFD7 100%);">Learn more <Icon src="/images/icon/arrow-blue.svg" /></Button>
            </ElementContainer>
-           <ElementContainer>
+           <ElementContainer
+              variants={FadeAnimate}
+             
+           >
              <Element>
                <Image src="/images/icon/svg3.svg" alt="" width="57px" height='31px'/>
                  <P2>Put Your Creative Skills To The Test</P2>
@@ -279,7 +313,10 @@ export default function Features() {
               <Button round width="160px" background="linear-gradient(180deg, #3757FF -18.57%, #22FFD7 100%);">Learn more <Icon src="/images/icon/arrow-blue.svg" /></Button>
 
            </ElementContainer>
-           <ElementContainer>
+           <ElementContainer
+              variants={FadeAnimate}
+             
+           >
              <Element>
              <Image src="/images/icon/svg1.svg" alt="" width="57px" height='31px'/>
                  <P2>See You At The Country Club</P2>

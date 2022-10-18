@@ -48,8 +48,49 @@ const Container = styled.div`
   gap:2rem;
 
 `
+const Noise = styled.div`
+   height: 100%;
+    left: 0;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+
+    &:after {
+      -webkit-animation: noise 1s steps(2) infinite;
+      animation: noise 1s steps(2) infinite;
+      animation-duration: 1s;
+      animation-timing-function: steps(2);
+      animation-delay: 0s;
+      animation-iteration-count: infinite;
+      animation-direction: normal;
+      animation-fill-mode: none;
+      animation-play-state: running;
+      animation-name: noise;
+      background-image: url(images/noise.png);
+      content: "";
+      height: calc(100% + 20rem);
+      left: -10rem;
+      position: absolute;
+      top: -10rem;
+      width: calc(100% + 20rem);
+      will-change: transform;
+      }
+
+      @keyframe noise {
+        from {
+          opacity:1;
+        }
+
+        to{
+          opacity:0;
+        }
+  }
+`
 export default function Footer() {
   return (
+    <>
     <FooterEl>
       <Container>
       <Image src="/images/logo.svg" alt="" width='100%' height="100%"/>
@@ -90,5 +131,7 @@ export default function Footer() {
 
       </Links>
     </FooterEl>
+    <Noise></Noise>
+    </>
   );
 }

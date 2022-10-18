@@ -1,6 +1,8 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import Button from "../styled/Button.styled";
 import { Colors, Devices } from "../Theme";
+import { FadeAnimate , imageFade, imageAnimate} from "../animation/Animation";
 
 const Content = [
     {
@@ -27,7 +29,7 @@ const NetworkEl = styled.article`
     padding: 1rem 10%;
   }
 `;
-const SectionContainer = styled.div`
+const SectionContainer = styled(motion.div)`
   display: flex;
   margin-top: 150px;
   margin-bottom: 100px;
@@ -38,7 +40,7 @@ const SectionContainer = styled.div`
   }
 `;
 
-const LeftSection = styled.div`
+const LeftSection = styled(motion.div)`
   display: flex;
   flex: 1rem;
   flex-direction: column;
@@ -85,11 +87,11 @@ const Icon = styled.img`
     width:32px;
     height:32px;
 `;
-const Illustration = styled.img`
+const Illustration = styled(motion.img)`
     width:100%;
 `;
 
-const Container = styled.div`
+const Container = styled(motion.div)`
     border-top: 2px solid #fff;
     padding:1rem 0rem;
 `
@@ -97,21 +99,30 @@ const Container = styled.div`
 export default function Venues() {
     return (
       <NetworkEl>
-        <SectionContainer>
-          <LeftSection>
+        <SectionContainer
+        initial={"offscreen"}
+        whileInView={"onscreen"}
+        viewport={{once:false, amount:0.5}}
+        transition={{staggerChildren:0.5}}
+        >
+          <LeftSection
+           initial={"offscreen"}
+           whileInView={"onscreen"}
+           viewport={{once:false, amount:0.5}}
+           transition={{staggerChildren:0.5}}
+          >
             {Content.map((item, index) => {
                 return (
-                <Container key={index}>
+                <Container key={index} variants={FadeAnimate}>
                     <Title> {item.title}</Title>
                     <Text>{item.text}</Text>
                 </Container>
                 )
             })}
-           
-            <Button round="32px" background = "#32E2B8"> Enter PreSale <Icon src="/images/icon/arrow-right.svg"/> </Button>
+            <Button  variants={FadeAnimate} round="32px" background = "#32E2B8"> Enter PreSale <Icon src="/images/icon/arrow-right.svg"/> </Button>
           </LeftSection>
-          <RightSection>
-            <Illustration src="/images/illustration2.svg"/>
+          <RightSection variants={imageAnimate}>
+            <Illustration src="/images/illustration2.svg" />
           </RightSection>
         </SectionContainer>
       </NetworkEl>

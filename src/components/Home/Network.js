@@ -93,38 +93,41 @@ const Illustration = styled.img`
 
 export default function Network() {
   const containerRef = useRef();
+  const section = useRef();
 
-  useEffect(() => {
-  
-    let ctx = gsap.context(() => {
 
-      const tl = gsap.timeline({
+  // useEffect(() => {
   
-        scrollTrigger: {
-        trigger: containerRef.current,
-        pin: true,
-        scrub: true,
-        end: () => `+=${containerRef.offsetWidth}`
+  //   let ctx = gsap.context(() => {
+
+  //     const tl = gsap.timeline({
+  
+  //       scrollTrigger: {
+  //       trigger: containerRef.current,
+  //       pin: true,
+  //       scrub: true,
+  //       end:"+=100px"
+  //       // end: () => `+=${containerRef.current.offsetWidth}`
           
-      }
+  //     }
       
-    })
-    tl
-    .to(containerRef.current, { duration: 5, background: "linear-gradient(231.34deg, #D515AA 6.9%, #FFE55C 90.35%)", ease: "none" }, 0)
+  //   })
+  //   // tl
+  //   // .to(section.current, { duration: 1, opacity:0, ease: "none" }, 0)
       
       
-    },[]); // <- IMPORTANT! Scopes selector text
+  //   },[]); // <- IMPORTANT! Scopes selector text
     
-    return () => ctx.revert(); // clean
+  //   return () => ctx.revert(); // clean
     
     
-  }, [])
+  // }, [])
 
 
 
     return (
       <NetworkEl ref={containerRef}>
-        <SectionContainer>
+        <SectionContainer ref={section}>
           <LeftSection>
             <Title> <span style={{color:"white"}}>Welcome to the</span><br/> <span style={{color:'#6E0B66F9'}}> MetaCryp Network  </span><br/> <small style={{fontWeight:'400'}}>Unwind - Create and Escape</small> </Title>
             <Text>Escape to a World of Virtual Reality.With Metacryp you can leave  the hustle 
