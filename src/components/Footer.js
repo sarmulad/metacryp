@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { BsInstagram, BsMedium, BsDiscord, BsTelegram } from "react-icons/bs";
+import {  BsTelegram } from "react-icons/bs";
 import { GrTwitter } from "react-icons/gr";
 import { Colors, Devices } from "./Theme";
 import Image from "next/image";
@@ -46,7 +46,7 @@ const Links = styled.div`
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap:2rem;
+  gap:1rem;
 
 `
 const Noise = styled.div`
@@ -94,19 +94,10 @@ export default function Footer() {
     <>
     <FooterEl>
       <Container>
-      <Image src="/images/logo.svg" alt="" width='100%' height="100%"/>
+      <Image src="/images/logo.svg" alt="" width='200px' height="100%"/>
       <Socials>
         <a hef="#">
-          <BsInstagram />
-        </a>
-        <a hef="#">
           <GrTwitter />
-        </a>
-        <a hef="#">
-          <BsMedium />
-        </a>
-        <a hef="#">
-          <BsDiscord />
         </a>
         <a hef="#">
           <BsTelegram />
@@ -123,14 +114,14 @@ export default function Footer() {
         <a href="#">Staking</a>
         <a href="#">Terms and Conditions</a>
       </Links>
-      <Links>
+      {/* <Links>
         <h4>Links</h4>
         <a href="#">Polygon</a>
         <a href="#">KUCOIN</a>
         <a href="#">SHIBASWAP</a>
         <a href="#">Citizen X</a>
 
-      </Links>
+      </Links> */}
     </FooterEl>
     <Noise></Noise>
     </>
