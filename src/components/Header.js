@@ -18,7 +18,7 @@ const HeaderEl = styled.header`
   padding: 1rem 1.5rem;
   top: 10px;
   // background-color: ${Colors.Background};
-  position: fixed;
+  position: sticky;
   z-index:100;
   font-family: 'Clash Display', sans-serif;
   // opacity:0.8;
