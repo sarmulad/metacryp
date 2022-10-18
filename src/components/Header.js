@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { IoClose } from "react-icons/io5";
 import { Colors, Devices } from "./Theme";
-import { useEffect,useState } from "react";
+import { useRef,useState } from "react";
 import dynamic from 'next/dynamic'
 import Button from "./styled/Button.styled";
 const Countdown = dynamic(
@@ -16,7 +16,7 @@ const HeaderEl = styled.header`
   height: 10%;
   gap: 1rem;
   padding: 1rem 1.5rem;
-  top: 10px;
+  top: 1px;
   // background-color: ${Colors.Background};
   position: sticky;
   z-index:100;
@@ -25,6 +25,7 @@ const HeaderEl = styled.header`
   @media ${Devices.Tablet} {
     position: fixed;
     height:90px;
+    top: 10px;
   }
   
 `;
@@ -96,13 +97,16 @@ let targetDate = new Date("december 30,2022");
 
 export default function Header({ mobileMenu }) {
   const { MobileMenuIsOpen, setMobileMenuIsOpen } = mobileMenu;
+   const toggleColor = useRef();
 
   function toggleMenu() {
     setMobileMenuIsOpen(!MobileMenuIsOpen);
   }
 
   return (
-    <HeaderEl>
+    <HeaderEl 
+        ref={toggleColor}
+       >
       <Center>
         <NavItem href="/"><Logo src="/images/logo.svg" /></NavItem>
         <Countdown targetDate={targetDate} suppressHydrationWarning/>
@@ -131,6 +135,7 @@ export default function Header({ mobileMenu }) {
             color={Colors.Primary}
             onClick={() => {
               toggleMenu();
+               toggleColor.current.style.background = ""
             }}
           />
         ) : (
@@ -138,6 +143,8 @@ export default function Header({ mobileMenu }) {
             src="images/icon/menu.svg"
             onClick={() => {
               toggleMenu();
+              toggleColor.current.style.background = Colors.Background;
+              toggleColor.current.style.transition= "all 0.1s ease-out"
             }}
           />
         )}
