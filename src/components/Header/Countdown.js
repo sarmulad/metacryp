@@ -5,24 +5,22 @@ import { Colors, Devices } from "../Theme";
 
 
 const Container = styled.div`
-    display:none; 
-  
+   display:flex;
+   flex-direction:column; 
+   gap: 0.5rem;
   }
   @media ${Devices.Laptop} {
     gap: 0.5rem;
-    display:flex;
-    flex-direction:column; 
     align-items:center; 
- }
+   }
  }
 `
 const CountdownContainer = styled.div`
   display: flex;
   align-items: center;
-  display:none;
-  gap: 1rem;
+  gap: 0.2rem;
   
-}
+ }
   @media ${Devices.Laptop} {
     gap: 1.5rem;
     display:flex;
@@ -32,20 +30,32 @@ const CountdownContainer = styled.div`
 const CountdownItem = styled.div`
    text-align: center;
    h2{
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     padding: 0.7rem 0.5rem;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(3.71575px);
     border-radius: 8.91781px;
-    font-size:23px;
+    font-size:12px;
+  
+    @media ${Devices.Tablet} {
+      width: 50px;
+      height: 50px;
+      font-size:23px;
+   }
+
   }
   span{
       font-style: normal;
-      font-weight: 600;
-      font-size: 15px;
+      font-weight: 400;
+      font-size: 11px;
       line-height: 27px;
       letter-spacing: 0.05em;
+      @media ${Devices.Tablet} {
+        font-weight: 600;
+        font-size: 15px;
+     }
+
   }
 
 

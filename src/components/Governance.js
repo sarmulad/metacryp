@@ -113,8 +113,14 @@ export default function Governance() {
           <LeftSection>
             <Title> Governance & Rewards</Title>
             <Text>The $MTCR token is the utility token of the MetaCryp Network, availing users the opportunity to bask in the numerous features that our metaverse offers. 
-                Every token holder has the right to participate in the DAO. Decision-making will be allocated based on the participants ownership of the $MTCR token. Our native token allows governance privileges. The voting rights and decision-making will be tiered based on cumulative holdings of the governance tokens. Hence the more the token, the more the voting power.
-                Our native BEP20 token does not only represent voting rights on the platform but also access to scalable transactions and activities in our metaverse. 
+                Every token holder has the right to participate in the DAO. Decision-making will be allocated based on the participants ownership of the $MTCR token. 
+            </Text>
+            <Text>
+               Our native token allows governance privileges. The voting rights and decision-making will be tiered based on cumulative holdings of the governance tokens. Hence the more the token, the more the voting power.
+            </Text>
+            <Text>
+              Our native BEP20 token does not only represent voting rights on the platform but also access to scalable transactions and activities in our metaverse. 
+
             </Text>
           
           </LeftSection>

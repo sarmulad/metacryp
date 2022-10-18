@@ -3,6 +3,7 @@ import { IoClose } from "react-icons/io5";
 import { Colors, Devices } from "./Theme";
 import { useEffect,useState } from "react";
 import dynamic from 'next/dynamic'
+import Button from "./styled/Button.styled";
 const Countdown = dynamic(
   () => import('./Header/Countdown'),
   { ssr: false }
@@ -32,14 +33,19 @@ const Center = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
-  justify-content:space-between;
-  gap: 5rem;
+  gap: 2rem;
+  // justify-content:space-between;
+  @media ${Devices.Laptop} {
+    gap: 5rem;
+  }
 `;
 
 
 const Logo = styled.img`
-  // width: 100px;
-  padding-right: 1rem;
+  width: 120px;
+  @media ${Devices.Tablet} {
+    width:auto;
+  }
 `;
 
 const Nav = styled.nav`
@@ -63,6 +69,10 @@ const Nav = styled.nav`
 const NavItem = styled.a`
   font-size: 1rem;
   font-weight: 400;
+
+  &:hover{
+    color:#32E2B8;
+  }
 `;
 
 const SearchIcon = styled.span`
@@ -73,6 +83,10 @@ const SearchIcon = styled.span`
   @media ${Devices.Laptop} {
     display: none;
   }
+`;
+const Icon = styled.img`
+  width:32px;
+  height:32px;
 `;
 const MenuIcon = styled(SearchIcon)``;
 
@@ -106,7 +120,7 @@ export default function Header({ mobileMenu }) {
             <li>
               <NavItem href="#">Whitepaper</NavItem>
             </li>
-           
+            <Button background="#32E2B8" width="140px" round>Login<Icon src="/images/icon/arrow-right.svg"/></Button>
           </ul>
         </Nav>
       </Center>

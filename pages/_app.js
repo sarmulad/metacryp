@@ -90,7 +90,10 @@ const MobileMenu = styled.div`
     width: 100%;
   }
 
-  
+`;
+const Icon = styled.img`
+  width:32px;
+  height:32px;
 `;
 
 const NavItem = styled.a`
@@ -117,7 +120,7 @@ function MyApp({ Component, pageProps }) {
           <MobileMenu open={MobileMenuIsOpen}>
             <ul>
               <li>
-                <NavItem href="#">Home</NavItem>
+                <NavItem href="/">Home</NavItem>
               </li>
               <li>
                 <NavItem href="/about">About Us</NavItem>
@@ -129,15 +132,15 @@ function MyApp({ Component, pageProps }) {
                 <NavItem href="#">Whitepaper</NavItem>
               </li>
               <li>
-                <Button>Create</Button>
+               <Button background="#32E2B8" width="140px" round>Login<Icon src="/images/icon/arrow-right.svg"/></Button>
               </li>
-              <hr color={Colors.White} size="1" />
+              {/* <hr color={Colors.White} size="1" />
               <li>
                 <NavItem href="#">Sign In</NavItem>
               </li>
               <li>
                 <NavItem href="#">Sign Up</NavItem>
-              </li>
+              </li> */}
             </ul>
           </MobileMenu>
           <Component {...pageProps} />

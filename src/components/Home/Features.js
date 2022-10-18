@@ -56,9 +56,10 @@ const Title = styled.h1`
     text-align: center;
     color: #FFFFFF;
     position:absolute;
-    margin-top:3rem;
+    margin-top:1rem;
     @media ${Devices.Tablet} {
       font-size: 211.556px;
+      margin-top:3rem;
     }
 
 `;
@@ -225,7 +226,6 @@ export default function Features() {
       const down = gsap.timeline({
         defaults: {
           ease: "none",
-          // duration: 4,
         },
         scrollTrigger: {
           trigger: panel_one.current,
@@ -233,7 +233,6 @@ export default function Features() {
           end: "+=100% ",
           // end: () => `+=${document.querySelector(".mask").offsetWidth}`,
           scrub: 1,
-          markers:true,
           // pin:true,
         }
       });
@@ -282,12 +281,12 @@ export default function Features() {
      </FeaturesEl>   
     <div ref={container} className="container">
      <div className="overlay"></div>
-     <video src="/images/animation.mp4" autoPlay loop muted type="video/mp4"/>
+     <video src="/images/animation.mp4" autoPlay playsInline loop muted type="video/mp4"/>
      <ExploreEl ref ={explore}>
         <Grid 
           initial={"offscreen"}
           whileInView={"onscreen"}
-          viewport={{once:false, amount:0.5}}
+          viewport={{once:true, amount:0.5}}
           transition={{staggerChildren:0.5}}>
            <ElementContainer
               variants={FadeAnimate}

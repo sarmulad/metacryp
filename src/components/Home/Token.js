@@ -188,8 +188,8 @@ export default function Token() {
       <TokenEl 
       initial={"offscreen"}
       whileInView={"onscreen"}
-      viewport={{once:false, amount:0.3}}
-      transition={{staggerChildren:0.3}}
+      viewport={{once:true, amount:0.5}}
+      transition={{staggerChildren:0.5}}
        >
          <Title variants={imageFade}>  Token Distribution & Fund Utilization </Title>
          <TokenDist variants={imageFade}>
@@ -217,7 +217,7 @@ export default function Token() {
         <SectionContainer 
          initial={"offscreen"}
          whileInView={"onscreen"}
-         viewport={{once:false, amount:0.5}}
+         viewport={{once:true, amount:0.5}}
          transition={{staggerChildren:0.5}}
         >
           <LeftSection
@@ -294,10 +294,8 @@ export default function Token() {
           </RightSection>
         </SectionContainer>
         <Text
-            initial={"offscreen"}
-            whileInView={"onscreen"}
            variants={imageAnimate}
-        >
+          >
             The maximum amount of MetaCryp token ($MTCR) That will ever be created and be in 
             circulation at any point in time is 500,000,000 (500 million) $MTCR.  
             MetaCryp tokens are BEP-20 tokens hosted on Binance smart Chain.

@@ -10,6 +10,7 @@ const Button = styled(motion.button)`
   background: ${(p) => (p.background ? p.background : "transparent")};
   font-weight: 400;
   font-size: 16px;
+  font-family:inherit;
   color: ${(p) => (p.color ? p.color : Colors.Black)};
   border: none;
   border-radius: ${(p) => (p.round ? "32px" : "5px")};

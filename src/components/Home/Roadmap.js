@@ -1,5 +1,7 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import { Colors, Devices } from "../Theme";
+import { imageAnimate,FadeAnimate, imageAnimateLeft} from "../animation/Animation";
 
 
 const NetworkEl = styled.article`
@@ -26,7 +28,7 @@ const LeftSection = styled.div`
  
 `;
 
-const RightSection = styled.div`
+const RightSection = styled(motion.div)`
    display:flex;
    flex-direction:column;
    row-gap:3rem;
@@ -38,7 +40,7 @@ const RightSection = styled.div`
    
 `;
 
-const Title = styled.h1`
+const Title = styled(motion.h1)`
   font-family: 'Clash Display';
   font-style: normal;
   font-weight: 700;
@@ -78,13 +80,13 @@ const Illustration = styled.img`
  }
 `;
 
-const Container = styled.div`
+const Container = styled(motion.div)`
   display:flex;
   align-items:center;
   gap:3rem;
 `
 
-const ContainerRight = styled.div`
+const ContainerRight = styled(motion.div)`
   display:flex;
   align-items:center;
   @media ${Devices.Laptop} {
@@ -130,9 +132,16 @@ export default function Roadmap() {
           <LeftSection>
             <Illustration src="/images/roadmap.svg"/>  
           </LeftSection>
-          <RightSection>
-              <Title>Roadmap</Title>
-              <Container>
+          <RightSection
+            initial={"offscreen"}
+            whileInView={"onscreen"}
+            viewport={{once:true, amount:0.5}}
+            transition={{staggerChildren:0.5}}
+            >
+              <Title variants={FadeAnimate}>Roadmap</Title>
+              <Container
+               variants={imageAnimate}
+              >
                  <Number>1</Number>
                  <Cover>
                     <Ul>
@@ -144,7 +153,10 @@ export default function Roadmap() {
                  </Cover>
                  
               </Container>
-              <ContainerRight>
+              <ContainerRight
+               variants={imageAnimateLeft}
+               
+              >
                  <Number>2</Number>
                  <Cover>
                     <Ul>
@@ -155,7 +167,10 @@ export default function Roadmap() {
                     </Ul>
                  </Cover>
               </ContainerRight>
-              <Container>
+              <Container
+               variants={imageAnimate}
+               
+              >
                  <Number>3</Number>
                  <Cover>
                     <Ul>
@@ -167,7 +182,9 @@ export default function Roadmap() {
                  </Cover>
                  
               </Container>
-              <ContainerRight>
+              <ContainerRight
+               variants={imageAnimateLeft}
+              >
                  <Number>4</Number>
                  <Cover>
                     <Ul>

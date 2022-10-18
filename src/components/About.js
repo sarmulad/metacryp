@@ -101,11 +101,17 @@ export default function About() {
           <LeftSection>
             <Title> About Us</Title>
             <Text>MetaCryp Network is a metaverse project that is creating a haven for people to escape from the stress of daily lives. 
-                Owning the native token of the MetaCryp ecosystem offers you access to a league of exciting activities and places to visit in the metaverse. As the ecosystem grows, holders will enjoy additional value. 
-                MetaCryp Metaverse is a community-centric ecosystem where decisions fall in the hands of the native tokens holders. Holding the token offers you membership to an elite members-only group of like-minded individuals that want to unwind and create a blissful experience on the well-tailored metaverse. 
-                With our plans, community members will have access to customized country clubs, vacation spots, and event centres. People can tailor their avatars to their needs.  
+                Owning the native token of the MetaCryp ecosystem offers you access to a league of exciting activities and places to visit in the metaverse. 
             </Text>
-          
+             <Text>
+              As the ecosystem grows, holders will enjoy additional value. 
+                MetaCryp Metaverse is a community-centric ecosystem where decisions fall in the hands of the native tokens holders. Holding the token offers you membership to an elite members-only group of like-minded individuals that want to unwind and create a blissful experience on the well-tailored metaverse. 
+             </Text>
+             <Text>
+             With our plans, community members will have access to 
+             customized country clubs, vacation spots, and event centres. 
+             People can tailor their avatars to their needs.  
+             </Text>
           </LeftSection>
           <RightSection>
             <Illustration src="/images/metaverse.svg"/>
