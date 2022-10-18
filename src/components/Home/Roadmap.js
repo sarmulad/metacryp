@@ -93,15 +93,24 @@ const ContainerRight = styled(motion.div)`
   @media ${Devices.Laptop} {
     margin-left:13rem;
     column-gap:3rem;
-
   }
 `
 const Cover = styled.div`
     background: url("images/cover.svg");
     background-repeat:no-repeat;
-    // background-size: cover;
+    background-size: cover;
     width:320px;
     height:196px;
+    display:flex;
+    align-items:start;
+    padding:2rem;
+`
+const CoverLong = styled.div`
+    background: url("images/frost2.svg");
+    background-repeat:no-repeat;
+    background-size: cover;
+    width:320px;
+    height:320px;
     display:flex;
     align-items:start;
     padding:2rem;
@@ -161,10 +170,10 @@ export default function Roadmap() {
                  <Number>2</Number>
                  <Cover>
                     <Ul>
-                        <Text>Stage 1</Text>
-                        <Li>Presale</Li>
-                        <Li>VR demo of the MetaCryp Universe</Li>
-                        <Li>Building of the in-game assets in the Metaverse</Li>
+                        <Text>Stage 2</Text>
+                        <Li> Improving the in-game features of the MetaCryp ecosystem</Li>
+                        <Li>Testnet</Li>
+                        <Li>MetaCryp release(soft launch)</Li>
                     </Ul>
                  </Cover>
               </ContainerRight>
@@ -175,10 +184,12 @@ export default function Roadmap() {
                  <Number>3</Number>
                  <Cover>
                     <Ul>
-                        <Text>Stage 1</Text>
-                        <Li>Presale</Li>
-                        <Li>VR demo of the MetaCryp Universe</Li>
-                        <Li>Building of the in-game assets in the Metaverse</Li>
+                        <Text>Stage 3 </Text>
+                        <Li>Incorporating staking elements</Li>
+                        <Li>Multi-player functionality</Li>
+                        <Li>Mainnet launch of the metaverse</Li>
+                        <Li>In-game asset trading</Li>
+
                     </Ul>
                  </Cover>
                  
@@ -187,14 +198,15 @@ export default function Roadmap() {
                variants={imageAnimateLeft}
               >
                  <Number>4</Number>
-                 <Cover>
+                 <CoverLong>
                     <Ul>
-                        <Text>Stage 1</Text>
-                        <Li>Presale</Li>
-                        <Li>VR demo of the MetaCryp Universe</Li>
-                        <Li>Building of the in-game assets in the Metaverse</Li>
+                        <Text>Stage 4</Text>
+                        <Li>Introducing the remaining part of the GameFi element, the DeFi features</Li>
+                        <Li>Addition of avatars in the metaverse</Li>
+                        <Li>Incorporating holiday venues and country clubs</Li>
+                        <Li>Integrating Play-to-Earn elements</Li>
                     </Ul>
-                 </Cover>
+                 </CoverLong>
               </ContainerRight>
           </RightSection>
         </SectionContainer>

@@ -239,52 +239,52 @@ export default function Token() {
                     {/* <Th className='mbl-h'>%</Th> */}
                 </Tr>
                 <Tr>
-                    <Td><Icon src="/images/icon/ellipse.svg"/> Presale</Td>
+                    <Td><Icon src="/images/icon/tk1.svg"/> Presale</Td>
                     <Td>150,000,000</Td>
                     <Td>30%</Td>
                 </Tr>
                 <Tr>
-                    <Td><Icon src="/images/icon/ellipse.svg"/> P2E funding</Td>
+                    <Td><Icon src="/images/icon/tk2.svg"/> P2E funding</Td>
                     <Td>50,000,000</Td>
                     <Td>10%</Td>
                 </Tr>
                 <Tr>
-                    <Td><Icon src="/images/icon/ellipse.svg"/> Staking rewards</Td>
+                    <Td><Icon src="/images/icon/tk3.svg"/> Staking rewards</Td>
                     <Td>50,000,000</Td>
                     <Td>10%</Td>
                 </Tr>
                 <Tr>
-                    <Td><Icon src="/images/icon/ellipse.svg"/>Fund</Td>
+                    <Td><Icon src="/images/icon/tk4.svg"/>Fund</Td>
                     <Td>50,000,000</Td>
                     <Td>10%</Td>
                 </Tr>
                 <Tr>
-                    <Td><Icon src="/images/icon/ellipse.svg"/> Team</Td>
+                    <Td><Icon src="/images/icon/tk5.svg"/> Team</Td>
                     <Td>50,000,000</Td>
                     <Td>10%</Td>
                 </Tr>
                 <Tr>
-                    <Td><Icon src="/images/icon/ellipse.svg"/> Airdrop</Td>
+                    <Td><Icon src="/images/icon/tk6.svg"/> Airdrop</Td>
                     <Td>50,000,000</Td>
                     <Td>10%</Td>
                 </Tr>
                 <Tr>
-                    <Td> <Icon src="/images/icon/ellipse.svg"/>Bonuses</Td>
+                    <Td> <Icon src="/images/icon/tk7.svg"/>Bonuses</Td>
                     <Td>25,000,000</Td>
                     <Td>5%</Td>
                 </Tr>
                 <Tr>
-                    <Td><Icon src="/images/icon/ellipse.svg"/> Liquidity</Td>
+                    <Td><Icon src="/images/icon/tk8.svg"/> Liquidity</Td>
                     <Td>25,000,000</Td>
                     <Td>5%</Td>
                 </Tr>
                 <Tr>
-                    <Td> <Icon src="/images/icon/ellipse.svg"/>Reserve</Td>
+                    <Td> <Icon src="/images/icon/tk9.svg"/>Reserve</Td>
                     <Td>25,000,000</Td>
                     <Td>5%</Td>
                 </Tr>
                 <Tr>
-                    <Td> <Icon src="/images/icon/ellipse.svg"/>Advisor</Td>
+                    <Td> <Icon src="/images/icon/tk10.svg"/>Advisor</Td>
                     <Td>25,000,000</Td>
                     <Td>5%</Td>
                 </Tr>
