@@ -19,13 +19,15 @@ const FeaturesEl = styled.article`
   text-align: center;
   flex-direction: column;
   align-items: center;
-  padding: 1rem;
+  padding: 50%;
   height:auto;
   z-index:0;
   overflow:hidden;
   background: linear-gradient(180deg, #3757FF -18.57%, #22FFD7 100%);
   backdrop-filter: blur(200px);
   position:relative;
+  height:100vh;
+ 
   @media ${Devices.Laptop} {
    padding: 6rem 4rem 5rem 4rem;
    height:100vh;
@@ -49,7 +51,7 @@ const InnerCircle = styled.div`
 
 const Title = styled.h1`
     font-weight: 700;
-    font-size: 30px;
+    font-size: 50px;
     line-height: 119px;
     text-align: center;
     color: #FFFFFF;

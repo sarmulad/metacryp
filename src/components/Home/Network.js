@@ -15,7 +15,7 @@ const NetworkEl = styled.article`
   display: flex;
   flex-direction: column;
   z-index:2;
-  // max-width:95%;
+  max-width:95%;
   // background: linear-gradient(231.34deg, #D515AA 6.9%, #FFE55C 90.35%);
   @media ${Devices.Laptop} {
      padding: 10rem 5%;
