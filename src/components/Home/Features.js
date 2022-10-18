@@ -51,8 +51,8 @@ const InnerCircle = styled.div`
 
 const Title = styled.h1`
     font-weight: 700;
-    font-size: 50px;
-    line-height: 119px;
+    font-size: 81px;
+    line-height: 46px;
     text-align: center;
     color: #FFFFFF;
     position:absolute;
@@ -60,6 +60,8 @@ const Title = styled.h1`
     @media ${Devices.Tablet} {
       font-size: 211.556px;
       margin-top:3rem;
+     line-height: 119px;
+
     }
 
 `;

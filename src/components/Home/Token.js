@@ -188,8 +188,8 @@ export default function Token() {
       <TokenEl 
       initial={"offscreen"}
       whileInView={"onscreen"}
-      viewport={{once:true, amount:0.5}}
-      transition={{staggerChildren:0.5}}
+      viewport={{once:true, amount:0.3}}
+      transition={{staggerChildren:0.3}}
        >
          <Title variants={imageFade}>  Token Distribution & Fund Utilization </Title>
          <TokenDist variants={imageFade}>
@@ -294,7 +294,7 @@ export default function Token() {
           </RightSection>
         </SectionContainer>
         <Text
-           variants={imageAnimate}
+          //  variants={imageAnimate}
           >
             The maximum amount of MetaCryp token ($MTCR) That will ever be created and be in 
             circulation at any point in time is 500,000,000 (500 million) $MTCR.  

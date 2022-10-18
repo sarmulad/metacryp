@@ -10,6 +10,8 @@ const NetworkEl = styled.article`
   display: flex;
   flex-direction: column;
   padding:3rem 1rem;
+  overflow:hidden;
+
   @media ${Devices.Laptop} {
     padding: 0rem 10%;
   }
@@ -33,7 +35,6 @@ const RightSection = styled(motion.div)`
    flex-direction:column;
    row-gap:3rem;
    margin-top:2rem;
-   overflow:hidden;
    @media ${Devices.Tablet} {
     margin-left:2rem;
   }
